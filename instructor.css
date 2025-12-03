@@ -1,0 +1,175 @@
+/* =======================================================
+   Instructor Page - Standalone Theme (Matches own.html)
+======================================================== */
+
+:root {
+    --bg: #0b0b0b;
+    --text: #d0d0d0;
+    --primary: #33fc01;
+    --card: #151515;
+}
+
+/* Page Background */
+body.instructor-page {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* ===================== NAVBAR ===================== */
+.instructor-nav {
+    width: 100%;
+    height: 70px;
+    background: #000;
+    border-bottom: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.instructor-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.instructor-nav ul li a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.instructor-nav ul li a:hover,
+.instructor-nav ul li a.active {
+    color: var(--primary);
+}
+
+/* Login username (after login) */
+.user-box {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Login button (before login) */
+.login-btn {
+    color: var(--text);
+    text-decoration: none;
+    background: var(--primary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* ===================== HERO SECTION ===================== */
+
+.hero-section {
+    margin-top: 120px;
+    text-align: center;
+    padding: 40px;
+}
+
+.main-title {
+    font-size: 45px;
+    color: var(--primary);
+}
+
+.subtitle {
+    font-size: 18px;
+    width: 70%;
+    margin: auto;
+    color: #b4b4b4;
+}
+
+/* ===================== INSTRUCTOR CARDS ===================== */
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 50px 60px;
+}
+
+.instructor-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(51, 252, 1, 0.1);
+    transition: 0.3s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 18px rgba(51, 252, 1, 0.2);
+}
+
+.instructor-card img {
+    width: 100%;
+    height: 230px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.instructor-card h3 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: var(--primary);
+}
+
+.instructor-card p {
+    font-size: 14px;
+    color: #a8a8a8;
+}
+
+/* ===================== FOOTER ===================== */
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #000;
+    color: #777;
+    margin-top: 40px;
+}
+.footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+    .instructor-nav {
+        padding: 0 20px;
+    }
+    .instructor-nav ul {
+        gap: 20px;
+    }
+    .hero-section {
+        padding: 30px 20px;
+    }
+    .subtitle {
+        width: 90%;
+    }
+    .instructor-grid {
+        padding: 30px 20px;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* End of instructor.css */

@@ -1,0 +1,120 @@
+/* HIDE LANDING PAGE HERO */
+.hero-img {
+    display: none !important;
+}
+
+.scrolling-content {
+    margin-top: 0 !important;
+}
+
+/* WORKOUT BACKGROUND */
+html body {
+    background: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2100')
+        no-repeat center center fixed !important;
+    background-size: cover !important;
+    background-color: #000000 !important;
+}
+
+/* ADMIN MAIN LAYOUT */
+.admin-main {
+    padding: 120px 10% 60px 10%;
+    min-height: 80vh;
+}
+
+/* SECTION TITLES */
+.section-header h1 {
+    color: #33fc01 !important;
+    text-shadow: 0 0 25px #33fc01 !important;
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+/* GRID (admin cards shifted to left — UPDATED PROPERLY) */
+/* MOVE ADMIN CARDS TO LEFT SIDE OF SCREEN */
+.admin-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 30px;
+    margin-top: 40px;
+    width: 100% !important;
+}
+
+/* CARDS - GLASS EFFECT */
+.admin-card {
+    backdrop-filter: blur(14px);
+    background: rgba(0, 0, 0, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.admin-card h2 {
+    color: #e7496e;
+    margin-bottom: 10px;
+}
+
+.admin-card p {
+    font-size: 2.5rem;
+    color: #33fc01;
+    font-weight: 800;
+}
+
+/* TABLES - GLASS EFFECT */
+table.admin-table {
+    width: 100%;
+    margin-top: 40px;
+    border-collapse: collapse;
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.55) !important;
+}
+
+table.admin-table th,
+table.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+table.admin-table th {
+    background: rgba(193, 173, 173, 0.6);
+    color: #33fc01;
+    text-transform: uppercase;
+}
+
+/* DELETE BUTTON */
+.admin-delete-btn {
+    background: #e7496e;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.admin-delete-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* NAVBAR GLASS */
+#navbar {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* FIX ADMIN BACKGROUND */
+html body {
+    background: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2100')
+        no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+/* Remove black box covering the background (admin only) */
+.scrolling-content {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Hub - Powerflow Style</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+    </style>
+    <link rel="stylesheet" href="own.css">
+</head>
+
+<body>
+    <div class="hero-img" id="home">
+        <div class="hero-text reveal">
+            <span class="span1">STOP GUESSING.</span>
+            <span class="span2">START TRACKING.</span>
+            <p>Monitor every rep, log every step, and take control of your health with our advanced tracking tools.</p>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <div class="logo">
+            <img src="freepik-gradient-duotone-athletic-running-club-logo-20251108231307rTiD-removebg-preview.png"
+                alt="Logo" onerror="this.src='https://placehold.co/45x45/e7496e/ffffff?text=FH'">
+            <h1>
+                <span class="span1">FITNESS</span>
+                <span class="span2">HUB</span>
+            </h1>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span
+                class="bar"></span></div>
+
+        <div class="nav-right" id="nav-right">
+            <ul class="nav-menu">
+                <li><a href="./own.html" class="nav-link">Home</a></li>
+                <li><a href="#track" class="nav-link">Track</a></li>
+                <li><a href="#my-workout" class="nav-link">Workouts</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#ai-chat" id="ai-chat-link" class="nav-link">AI Chat</a></li>
+                <li><a href="admin.html" class="nav-link">admin</a></li>
+
+            </ul>
+
+            <div class="nav-btns" id="authButtons">
+                <a href="./login.html" class="nav-btn btn-signin">Login</a>
+                <a href="./signup.html" class="nav-btn btn-signup">SIGN UP</a>
+            </div>
+
+            <!-- USER DROPDOWN -->
+            <div class="user-dropdown" id="userDropdown" style="display:none;">
+                <div class="user-btn">
+                    👤 <span id="userNameLabel">User</span> ▼
+                </div>
+                <div class="user-menu">
+                    <p><strong>Name:</strong> <span id="dd-name"></span></p>
+                    <p><strong>Age:</strong> <span id="dd-age"></span></p>
+                    <p><strong>Phone:</strong> <span id="dd-phone"></span></p>
+                    <p><strong>Height:</strong> <span id="dd-height_cm"></span> cm</p>
+                    <p><strong>Weight:</strong> <span id="dd-weight_kg"></span> kg</p>
+                    <button id="logoutBtn" class="logout-btn">Logout</button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="scrolling-content">
+
+        <main class="main1 reveal" id="track">
+            <div class="split-container">
+                <div class="split-img"></div>
+                <div class="split-form">
+                    <div class="app-section">
+                        <h2>Power Tracker</h2>
+                        <p class="subtitle">Log your daily activity and keep pushing your limits.</p>
+                        <form id="workout-form" class="form-grid">
+                            <div class="form-group">
+                                <label>Workout Type</label>
+                                <input type="text" id="workout-type" placeholder="Running, Lifting..." required>
+                            </div>
+                            <div class="form-group">
+                                <label>Duration (mins)</label>
+                                <input type="number" id="duration" min="1" placeholder="45" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Intensity</label>
+                                <select id="intensity" required>
+                                    <option value="Low">Low Intensity</option>
+                                    <option value="Medium">Medium Intensity</option>
+                                    <option value="High">High Intensity</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="submit-btn">ADD WORKOUT SESSION</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main class="main2 reveal" id="my-workout">
+            <div class="section-header">
+                <h1>YOUR DASHBOARD</h1>
+                <p>Review your past performance and analyze your progress to reach your peak potential.</p>
+            </div>
+            <section class="app-wrapper">
+                <div class="app-section">
+                    <div class="controls">
+                        <div class="form-group">
+                            <label>FILTER BY TYPE</label>
+                            <select id="filter-type">
+                                <option value="all">SHOW ALL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>SORT BY</label>
+                            <select id="sort-by">
+                                <option value="date">LATEST FIRST</option>
+                                <option value="duration">DURATION</option>
+                                <option value="intensity">INTENSITY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul id="workout-list"></ul>
+                </div>
+            </section>
+        </main>
+
+        <main class="main3 reveal" id="contact" style="background-color: #111;">
+            <section class="app-wrapper" style="max-width: 800px;">
+                <div class="section-header" style="text-align: center; margin: 0 auto 40px auto;">
+                    <h1>GET IN TOUCH</h1>
+                    <p>Have questions? We are here to help you start your journey.</p>
+                </div>
+                <form id="contact-form" class="form-grid">
+                    <div class="form-group"><label>NAME</label><input type="text" required></div>
+                    <div class="form-group"><label>EMAIL</label><input type="email" required></div>
+                    <div class="form-group full-width"><label>MESSAGE</label><textarea required rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="reveal">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h1 style="color:#fff; margin-bottom: 20px;">FITNESS HUB</h1>
+                    <p>Empowering you to reach your peak performance.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #222; text-align: center; font-size: 0.9rem;">
+                &copy; 2025 FITNESS HUB. ALL RIGHTS RESERVED.
+            </div>
+        </footer>
+    </div>
+
+    <!-- AI CHATBOT -->
+    <div id="ai-chatbot">
+        <div id="ai-chat-header">Fitness Assistant</div>
+        <div id="ai-chat-body"></div>
+        <div id="ai-chat-input-area">
+            <input type="text" id="ai-chat-input" placeholder="Ask me anything..." />
+            <button id="ai-chat-send">Send</button>
+        </div>
+    </div>
+
+    <script src="own.js"></script>
+</body>
+</html>

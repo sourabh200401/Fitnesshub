@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - FitnessHub</title>
+
+    <link rel="stylesheet" href="own.css">
+
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2100')
+                no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+        }
+        .login-box {
+            width: 400px;
+            margin: 150px auto;
+            background: rgba(0,0,0,0.65);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #333;
+            color: #fff;
+        }
+        .login-box h1 {
+            color: #33fc01;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px #000;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: #000;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 8px;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: #e7496e;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+        #msg {
+            margin-top: 15px;
+            color: #ff6666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h1>ADMIN LOGIN</h1>
+
+        <input type="text" id="admin-user" placeholder="Username">
+        <input type="password" id="admin-pass" placeholder="Password">
+
+        <button class="login-btn" onclick="adminLogin()">Login</button>
+
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        async function adminLogin() {
+            const user = document.getElementById('admin-user').value.trim();
+            const pass = document.getElementById('admin-pass').value.trim();
+
+            const res = await fetch("api.php?action=admin_login", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({user, pass})
+            });
+
+            const data = await res.json();
+
+            if (data.ok) {
+                window.location.href = "admin.html";
+            } else {
+                document.getElementById('msg').innerText = data.error;
+            }
+        }
+    </script>
+
+</body>
+</html>

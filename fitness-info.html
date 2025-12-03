@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Hub - Fitness Information</title>
+
+    <link rel="stylesheet" href="own.css">
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1469&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-container {
+            background: rgba(15, 15, 15, 0.93);
+            border: 1px solid #333;
+            border-radius: 25px;
+            padding: 40px;
+            width: 480px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-container h2 {
+            text-align: center;
+            color: var(--accent-red);
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(231, 73, 110, 0.4);
+        }
+
+        .info-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .info-logo img {
+            width: 90px;
+        }
+
+        label {
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px;
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-red);
+        }
+
+        .info-btn {
+            width: 100%;
+            background: var(--accent-red);
+            padding: 15px;
+            border: none;
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .info-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="info-container">
+        
+        <div class="info-logo">
+            <img src="freepik-gradient-duotone-athletic-running-club-logo-20251108231307rTiD-removebg-preview.png" alt="Logo">
+        </div>
+
+        <h2>Fitness Information</h2>
+
+        <form>
+
+            <!-- Updated Height Field with Decimal Support -->
+            <label>Height (cm)</label>
+            <input 
+                type="number" 
+                placeholder="Enter your height" 
+                step="0.001" 
+                min="0" 
+                inputmode="decimal"
+                required>
+
+            <label>Weight (kg)</label>
+            <input type="number" min="0" placeholder="Enter your weight" required>
+
+            <label>Age</label>
+            <input type="number" min="1" placeholder="Enter your age" required>
+
+            <label>Fitness Goal</label>
+            <select required>
+                <option value="">Select goal</option>
+                <option>Weight Loss</option>
+                <option>Muscle Gain</option>
+                <option>Improve Stamina</option>
+                <option>General Fitness</option>
+                <option>Sports Performance</option>
+            </select>
+
+            <label>Medical Condition</label>
+            <textarea rows="4" placeholder="Mention any medical conditions (if any)"></textarea>
+
+            <button class="info-btn">Save Information</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

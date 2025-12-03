@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnessHub Admin</title>
+
+    <link rel="stylesheet" href="own.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+<!-- ADMIN AUTH CHECK -->
+<script>
+fetch("api.php?action=session_admin")
+    .then(res => res.json())
+    .then(data => {
+        if (!data.ok) { window.location.href = "admin_login.html"; }
+    });
+</script>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="glass">
+    <div class="logo">
+        <img 
+            class="admin-logo"
+            src="freepik-gradient-duotone-athletic-running-club-logo-20251108231307rTiD-removebg-preview.png"
+            alt="Logo"
+            onerror="this.src='https://placehold.co/120x120/e7496e/ffffff?text=FH'">
+
+        <h1>
+            <span class="span1">FITNESS</span>
+            <span class="span2">HUB</span>
+            <span style="color:#33fc01;">ADMIN</span>
+        </h1>
+    </div>
+
+    <div class="nav-right" id="nav-right">
+        <ul class="nav-menu">
+            <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+            <li><a href="#analytics" class="nav-link">Analytics</a></li>
+            <li><a href="#users" class="nav-link">Users</a></li>
+            <li><a href="#workouts" class="nav-link">Workouts</a></li>
+        </ul>
+
+        <div class="nav-btns">
+            <button onclick="adminLogout()" class="nav-btn btn-signin">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<div class="scrolling-content">
+
+    <!-- DASHBOARD -->
+    <main class="admin-main" id="dashboard">
+        <div class="section-header">
+            <h1>ADMIN DASHBOARD</h1>
+            <p>Monitor users and workouts in real-time.</p>
+        </div>
+
+        <div class="admin-grid">
+            <div class="admin-card">
+                <h2>Total Users</h2>
+                <p id="total-users">0</p>
+            </div>
+
+            <div class="admin-card">
+                <h2>Total Workouts</h2>
+                <p id="total-workouts">0</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ANALYTICS -->
+    <main class="admin-main" id="analytics">
+        <div class="section-header">
+            <h1>ANALYTICS</h1>
+            <p>Visual insights of platform activity</p>
+        </div>
+
+        <canvas id="chartUsers" style="margin-top:40px;"></canvas>
+        <canvas id="chartIntensity" style="margin-top:60px;"></canvas>
+        <canvas id="chartDaily" style="margin-top:60px;"></canvas>
+    </main>
+
+    <!-- USERS LIST -->
+    <main class="admin-main" id="users">
+        <div class="section-header">
+            <h1>USERS LIST</h1>
+        </div>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="user-table-body"></tbody>
+        </table>
+    </main>
+
+    <!-- WORKOUTS LIST -->
+    <main class="admin-main" id="workouts">
+        <div class="section-header">
+            <h1>WORKOUTS LIST</h1>
+        </div>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>Duration</th>
+                    <th>Intensity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="workout-table-body"></tbody>
+        </table>
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="admin.js"></script>
+
+<script>
+function adminLogout() {
+    fetch("api.php?action=admin_logout")
+        .then(r => r.json())
+        .then(() => window.location.href = "admin_login.html");
+}
+</script>
+
+</body>
+</html>
