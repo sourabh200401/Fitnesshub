@@ -156,5 +156,5 @@ User authentication system
 
 Sourabh Dey
 📍 Badarpur, Assam
-🎓 BCA Student – AdtU (Section B)
+🎓 BCA Student – AdtU (Section c)
 💼 Interested in Software Development, Fitness Tech & AI
